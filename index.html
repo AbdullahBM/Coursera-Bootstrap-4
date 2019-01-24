@@ -38,7 +38,7 @@
           </li>
         </ul>
         <span class="navbar-text">
-          <a data-toggle="modal" data-target="#loginModal">
+          <a id="logModal">
             <span class="fa fa-sign-in"></span> Login</a>
         </span>
       </div>
@@ -146,7 +146,7 @@
                 <button type="submit" class="btn btn-secondary ml-auto" data-dismiss="modal">Cancel</button>
               </div>
               <div class="col-12 col-sm">
-                <button type="submit" class="btn btn-primary ml-sm-4">Reserve</button>
+                <button type="submit" id="reserveButton" class="btn btn-primary ml-sm-4">Reserve</button>
               </div>
             </div>
           </form>
@@ -170,7 +170,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-sm-6"><img src="img/logo.png" alt="logo" class="img-fluid"></div>
             <div class="col-12 col-sm">
-              <a role="button" data-toggle="modal" data-target="#reserveModal" class="btn btn-block nav-link btn-warning">Reserve
+              <a role="button" id="resModal" class="btn btn-block nav-link btn-warning">Reserve
                 Table</a>
             </div>
           </div>
@@ -353,6 +353,12 @@
           $("#carouselButton").children("span").removeClass('fa-play');
           $("#carouselButton").children("span").addClass('fa-pause');
         }
+      });
+      $("#resModal").click(function () {
+        $("#reserveModal").modal("toggle");
+      });
+      $("#logModal").click(function () {
+        $("#loginModal").modal("toggle");
       });
     });
   </script>
